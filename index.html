@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>PokemonView</title>
 </head>
 <body>
@@ -11,12 +12,28 @@
         <input id="name" type="text" placeholder="Enter Pokemon Name">
         <input type="submit" onclick="getData()">
 
-        <table>
-            
+        <br>
+        <br>
+
+        <table id="table" class="border-spacing-20 table-auto border border-slate-400">
+           <tr> 
+            <th class="border-spacing-20 border border-slate-400">Name</th>
+            <th class="border border-slate-400">Number of Abilities</th>
+            <th class="border border-slate-400">Base Experience</th>
+            <th class="border border-slate-400">Height</th>
+            <th class="border border-slate-400">Number of Moves</th>
+            <th class="border border-slate-400">Weight</th>
+            <th class="border border-slate-400">Species</th>
+            <th class="border border-slate-400">Base health</th>
+            <th class="border border-slate-400">Base attack</th>
+            <th class="border border-slate-400">Base defense</th>
+            <th class="border border-slate-400">Base speed</th>
+        </tr>
 
 
 
         </table>
+
 
     <script src="script.js"></script>
 

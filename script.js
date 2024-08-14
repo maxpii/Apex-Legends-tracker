@@ -1,6 +1,6 @@
 let pokemonData = [];
 let pokemonNames = [];
-
+let bool = true;
 async function getData(){
     try{
         let pokemonName = document.getElementById("name").value;
@@ -12,7 +12,7 @@ async function getData(){
         pokemonNames.push(pokemonName);
 
         const data = await response.json();
-        //console.log(data);
+        console.log(data);
         //console.log(data["abilities"])
         const numAblities = data["abilities"].length;
         const exp = data["base_experience"];
@@ -26,7 +26,7 @@ async function getData(){
         const baseSpeed = data["stats"][5]["base_stat"];
 
         
-        let allData = {name:pokemonName,exp:exp,height:height,numMoves:numMoves,weigth:weight,
+        let allData = {name:pokemonName,exp:exp,height:height,numMoves:numMoves,weight:weight,
             species:species,baseHealth:baseHealth, baseAttack:baseAttack,
         baseDefense:baseDefense,baseSpeed:baseSpeed}
 
@@ -34,7 +34,7 @@ async function getData(){
         console.log(allData.exp);
         console.log(allData.height);
         console.log(allData.numMoves);
-        console.log(allData.weight);
+        console.log(allData.weigth);
         console.log(allData.species);
         console.log(allData.baseHealth);
         console.log(allData.baseAttack);
@@ -53,15 +53,34 @@ async function getData(){
 function addRow(object) {
     // Get a reference to the table
     let tableRef = document.getElementById("table");
-  
+    
     // Insert a row at the end of the table
     let newRow = tableRef.insertRow(-1);
-    
+    if (bool){
+    newRow.classList.add("bg-gray-100");
+    }
     for (const [key, value] of Object.entries(object)) {
         let newCell = newRow.insertCell(-1);
         let newText = document.createTextNode(value);
+        //newText.classList.add("p-3 text-sm text-gray-700")
         newCell.appendChild(newText);
       }
+
+      const cells = tableRef.querySelectorAll("td");
+      
+
+
+// Add a class to each cell
+    cells.forEach(cell => {
+         cell.classList.add("p-3");
+         cell.classList.add("text-lg");
+         cell.classList.add("text-center");
+        //  if (bool) {
+        //     cell.classList.add("bg-gray-500");
+        //  }
+         //cell.classList.add("text-gray-700");
+    });
+    bool = !bool;
 
     /*let newCell = newRow.insertCell(-1);
   

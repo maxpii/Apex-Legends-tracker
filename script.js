@@ -24,7 +24,7 @@ async function getData(){
         const baseAttack = data["stats"][1]["base_stat"];
         const baseDefense = data["stats"][2]["base_stat"];
         const baseSpeed = data["stats"][5]["base_stat"];
-
+        console.log("speed" + baseSpeed);
         
         let allData = {name:pokemonName,exp:exp,height:height,numMoves:numMoves,weight:weight,
             species:species,baseHealth:baseHealth, baseAttack:baseAttack,
@@ -75,6 +75,8 @@ function addRow(object) {
          cell.classList.add("p-3");
          cell.classList.add("text-lg");
          cell.classList.add("text-center");
+         cell.classList.add("border");
+         cell.classList.add("border-gray-600");
         //  if (bool) {
         //     cell.classList.add("bg-gray-500");
         //  }

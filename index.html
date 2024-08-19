@@ -6,28 +6,43 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>PokemonView</title>
 </head>
-<body>
-
-        <label for="">Pokemon</label>
-        <input id="name" type="text" placeholder="Enter Pokemon Name">
-        <input type="submit" onclick="getData()">
-
+<body class="bg-slate-200">
+    <div class="font-semibold text-6xl flex justify-center items-center bg-indigo-600">
+        <h1 >PokemonView</h1>
         <br>
         <br>
+        <br>
+    </div>
+    <div class="text-xl flex justify-center items-center bg-red-300">
+        <br>
+        <br>
+        <br>
+        <label class="" for="">Pokemon:</label>
+        <input class="rounded-lg border mx-2 px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" id="name" type="text" placeholder="Enter Pokemon Name">
 
-        <table id="table" class="w-full">
+    </div>
+
+    <br>
+    <div class="mb-0 pb-0 text-white border flex justify-center items-center text-3xl font-bold">
+        <br>
+        <input class="hover:bg-gray-800 rounded-xl bg-gray-950 px-3 py-3" type="submit" onclick="getData()">
+    </div>
+        <br>
+
+
+        <table id="table" class="border border-slate-400 w-full">
            <tr> 
-            <th class="p-3 text-xl text-center font-semibold tracking-wide text-left">Name</th>
-            <th class="p-3 text-xl text-center font-semibold tracking-wide text-left">Number of Abilities</th>
-            <th class="p-3 text-xl text-center font-semibold tracking-wide text-left">Base Experience</th>
-            <th class="p-3 text-xl text-center font-semibold tracking-wide text-left">Height</th>
-            <th class="p-3 text-xl text-center font-semibold tracking-wide text-left">Number of Moves</th>
-            <th class="p-3 text-xl text-center font-semibold tracking-wide text-left">Weight</th>
-            <th class="p-3 text-xl text-center font-semibold tracking-wide text-left">Species</th>
-            <th class="p-3 text-xl text-center font-semibold tracking-wide text-left">Base health</th>
-            <th class="p-3 text-xl text-center font-semibold tracking-wide text-left">Base attack</th>
-            <th class="p-3 text-xl text-center font-semibold tracking-wide text-left">Base defense</th>
-            <th class="p-3 text-xl text-center font-semibold tracking-wide text-left">Base speed</th>
+            <th class="border border-gray-600 p-3 text-xl text-center font-semibold tracking-wide text-left">Name</th>
+            <th class="border border-gray-600 p-3 text-xl text-center font-semibold tracking-wide text-left">Number of Abilities</th>
+            <th class="border border-gray-600 p-3 text-xl text-center font-semibold tracking-wide text-left">Base Experience</th>
+            <th class="border border-gray-600 p-3 text-xl text-center font-semibold tracking-wide text-left">Height</th>
+            <th class="border border-gray-600 p-3 text-xl text-center font-semibold tracking-wide text-left">Number of Moves</th>
+            <th class="border border-gray-600 p-3 text-xl text-center font-semibold tracking-wide text-left">Weight</th>
+            <th class="border border-gray-600 p-3 text-xl text-center font-semibold tracking-wide text-left">Species</th>
+            <th class="border border-gray-600 p-3 text-xl text-center font-semibold tracking-wide text-left">Base health</th>
+            <th class="border border-gray-600 p-3 text-xl text-center font-semibold tracking-wide text-left">Base attack</th>
+            <th class="border border-gray-600 p-3 text-xl text-center font-semibold tracking-wide text-left">Base defense</th>
+            <!--<th class="p-3 text-xl text-center font-semibold tracking-wide text-left">Base speed</th>-->
         </tr>
           </table>
 

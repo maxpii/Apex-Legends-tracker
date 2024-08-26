@@ -16,6 +16,7 @@ let colors = [
 async function getData(){
     try{
         let pokemonName = document.getElementById("name").value.toLowerCase();
+        if (!pokemonNames.includes(pokemonName)){
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
         
         if(!response.ok){
@@ -60,10 +61,9 @@ async function getData(){
         console.log(allData.baseDefense);
         console.log(allData.baseSpeed);
         */
-       console.log(allData);
         pokemonData.push(allData);
         addRow(allData);
-
+        }      
     }
     catch(error){
         console.error(error);
@@ -114,7 +114,36 @@ function addRow(object) {
     let newText = document.createTextNode(text);
     newCell.appendChild(newText);
     */
-   console.log("the index " + index)
+
+}
+function compare() {
+    console.log(pokemonData);
+    for(i in pokemonData[0]) {
+            if (i != "species" && i != "name"){
+            var arr = filterFinder(i);
+            var p = document.createElement("p");
+            p.innerHTML = `${arr[3]} has the highest ${i} of ${arr[1]}, ${arr[2]} has the lowest ${i} of ${arr[0]}`;
+            document.body.appendChild(p);
+        }
+    }
+}
+
+function filterFinder(condition) {
+    var minObject = pokemonData[0];
+    var maxObject = pokemonData[0];
+    var minValue = 100000000000;
+    var maxValue = -1;
+    pokemonData.forEach(function (item) {
+        if(item[condition] < minValue) {
+            minValue = item[condition];
+            minObject = item;
+        }
+        if(item[condition] > maxValue) {
+            maxValue = item[condition];
+            maxObject = item;
+        }
+    })
+    return [minValue,maxValue,minObject.name,maxObject.name];
 }
 
 

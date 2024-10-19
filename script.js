@@ -36,6 +36,7 @@ async function getData(){
         const baseAttack = data["stats"][1]["base_stat"];
         const baseDefense = data["stats"][2]["base_stat"];
         const baseSpeed = data["stats"][5]["base_stat"];
+        const comparisons = document.getElementById("comparisons");
         //console.log("speed" + baseSpeed);
         
         let allData = {
@@ -118,12 +119,14 @@ function addRow(object) {
 }
 function compare() {
     console.log(pokemonData);
+    comparisons.innerHTML = "";
     for(i in pokemonData[0]) {
             if (i != "species" && i != "name"){
             var arr = filterFinder(i);
             var p = document.createElement("p");
             p.innerHTML = `${arr[3]} has the highest ${i} of ${arr[1]}, ${arr[2]} has the lowest ${i} of ${arr[0]}`;
-            document.body.appendChild(p);
+            p.classList.add("pb-2")
+            comparisons.appendChild(p);
         }
     }
 }
